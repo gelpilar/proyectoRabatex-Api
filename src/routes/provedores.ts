@@ -1,9 +1,12 @@
 import { Router } from "express";
-import { getProvedor } from "../controllers/provedores_controladores";
+
 
 const router = Router();
 
-router.get("/",getProvedor);
-router.post("/")
+router.post("/",()=>{}) //agregar provedor
 
+router.put("/:id",()=>{}) // modificar provedor
+
+router.get("/:id",()=>{}) // ver información del provedor
+router.get("/",()=>{}) 
 export {router}
