@@ -1,12 +1,15 @@
 import { Router } from "express";
+import { getProvedor, getProvedores, getcompras, getcuentas, postCompra, postMateriaPrima, postProvedor, postagregarCuentaAProvedor, putcerrarCuentaProve } from "../controllers/provedores";
 
+const router= Router();
 
-const router = Router();
-
-router.post("/",()=>{}) //agregar provedor
-
-router.put("/:id",()=>{}) // modificar provedor
-
-router.get("/:id",()=>{}) // ver información del provedor
-router.get("/",()=>{}) 
+router.post("/",postProvedor);
+router.get("/",getProvedores);
+router.get("/:id",getProvedor);
+router.get("/cuentas/:id",getcuentas);
+router.get("/compras/:id",getcompras);
+router.post("/compras/:id",postCompra);
+router.post("/cuentas/:id",postagregarCuentaAProvedor)
+router.put("/cuentas/:id",putcerrarCuentaProve)
+router.post("/materia/",postMateriaPrima)
 export {router}
